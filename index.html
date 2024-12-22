@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fereastra de login -->
+    <div id="login-container" class="login-container">
+        <h2>Autentificare</h2>
+        <input type="text" id="username" placeholder="Introduceți numele utilizatorului" />
+        <button id="login-button">Intră în chat</button>
+    </div>
+
+    <!-- Chat-ul live -->
+    <div id="chat-container" class="chat-container" style="display: none;">
+        <div class="chat-header">
+            <h2>Chat Live</h2>
+            <button onclick="logout()">Deconectează-te</button>
+        </div>
+        <div id="messages" class="messages"></div>
+        <input type="text" id="message-input" placeholder="Scrie un mesaj..." onkeyup="sendMessage(event)">
+        <div class="emoji-picker">
+            <button onclick="insertEmoji('😊')">😊</button>
+            <button onclick="insertEmoji('❤️')">❤️</button>
+            <button onclick="insertEmoji('😎')">😎</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
